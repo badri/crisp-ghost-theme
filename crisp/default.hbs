@@ -9,10 +9,11 @@
 	    <meta name="description" content="{{meta_description}}" />
 	    <link rel="shortcut icon" href="{{@blog.logo}}"/>
 			{{! Styles }}
-	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 			<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="{{asset '/styles/crisp.css'}}">
+			<link rel="stylesheet" type="text/css" href="{{asset '/styles/prism.css'}}">
 			{{! Responsive Meta Tags }}
 	    <meta name="HandheldFriendly" content="True" />
 	    <meta name="MobileOptimized" content="320" />
@@ -24,6 +25,16 @@
 			<![endif]-->  
 			{{{block "head"}}}  
 	    {{ghost_head}}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58272695-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 	</head>
 	<body class="{{body_class}}">
 		<header id="header">
@@ -32,6 +43,27 @@
 			<p>{{@blog.description}}</p>
 			{{> follow}}
 			{{> navigation}}
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<p>Subscribe to my Drupal tutorials newsletter. ~1 mail/week.</p>
+<form action="//rhcloud.us7.list-manage.com/subscribe/post?u=b8e13c66d96b6a717034efcfe&amp;id=548198f1de" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_b8e13c66d96b6a717034efcfe_548198f1de" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
 		</header>
 		<main id="content">
 			{{{body}}}
@@ -40,5 +72,7 @@
 			<section id="footer-message">&copy; {{date format='YYYY'}} {{@blog.title}}. All rights reserved. Powered by <a href="http://ghost.org" target="_blank">Ghost</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
 		</footer>
 	{{ghost_foot}}
+        <script src="{{asset '/js/prism.js'}}"></script>
+        <script src="{{asset '/js/prism-yaml.js'}}"></script>
 	</body>
 </html>
